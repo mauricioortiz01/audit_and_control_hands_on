@@ -101,7 +101,7 @@ a Lambda function in response to the failure that will send an email to the acco
             1. Select `Specific state(s)` and choose `stopped`
             1. Select `Specific instance Id(s)` and paste the instance-id from the EC2 instance that you created
 
-            <img src="img/creation_method.png" alt="drawing" height="200"/>
+            <img src="img/creation_method.png" alt="drawing" height="500"/>
 
 ### Create a Lambda Function
 1. Open AWS Lambda Console and click `Create Function`
@@ -131,15 +131,15 @@ a Lambda function in response to the failure that will send an email to the acco
 1. Click on Deploy
 1. Click on Add Trigger
 
-    <img src="img/click_deploy.png" alt="drawing" height="200"/>
+    <img src="img/click_deploy.png" alt="drawing" height="500"/>
 
 1. Choose CloudWatch Logs as trigger
 1. Select name of CloudWatch log group that you have already created
 1. Enter filter name `EC2-stop` and click on Add
 
-    <img src="img/configure_trigger.png" alt="drawing" height="200"/>
+    <img src="img/configure_trigger.png" alt="drawing" height="500"/>
 
-### Create a Lambda Function
+### Test
 1. Open EC2 Console
 1. Select EC2 instance that you created in the beginning of this lab, click on the instance status and stop the instance
 1. Wait until the instance has stoppped
