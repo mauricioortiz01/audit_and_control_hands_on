@@ -25,7 +25,7 @@ a Lambda function in response to the failure that will send an email to the acco
 
 1. Open Amazon SNS console, on the left nagivation pane select "Topics" and then click on "Create Topic."
 
-    <img src="open_sns.png" alt="drawing" height="200"/>
+    <img src="img/open_sns.png" alt="drawing" height="200"/>
 
         
 1. When creating the SNS topic:
