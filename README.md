@@ -15,7 +15,7 @@ a Lambda function in response to the failure that will send an email to the acco
 
 ### Create an EC2 instance
 
-1. Open the EC2 console and create an EC2 instance named "ec2-stop"
+1. Open the EC2 console and create an EC2 instance named `ec2-stop`
     1. The EC2 instance needs to have an SSH key
     1. The EC2 instance needs to be in a public subnet
     1. After creating the EC2 instance copy the `instance-id` you will need it later
@@ -30,19 +30,16 @@ a Lambda function in response to the failure that will send an email to the acco
         
 1. When creating the SNS topic:
     1. Select `Standard`
-    1. Enter the name of the topic as `EC2-stop
+    1. Enter the name of the topic as `EC2-stop`
     1. Click on Create Topic
 
 
-    <img src="img/create_sns.png" alt="drawing" height="500"/>
+        <img src="img/create_sns.png" alt="drawing" height="500"/>
 
 1. After creating the Topic, go the topic you have already created, and click on `Create Subscription`
-
-    <img src="img/create_sns.png" alt="drawing" height="400"/>
-
 1. Configure the subscription:
     1. Set the Protocol to `Email`
-    1. Set the Endpoint to your email.
+    1. For Endpoint enter your email.
     1. Click on `Create Subscription`
 
     <img src="img/click_create_subscription.png" alt="drawing" height="400"/>
@@ -63,7 +60,7 @@ a Lambda function in response to the failure that will send an email to the acco
     1. For Actions, select all
     1. For reseources, select `All resources`
     1. Click on `Add additional Permissions`
-        1. For service choose `CloudWatch Logs`
+        1. For service choose `CloudWatch Logs` **It has to be CloudWatch Logs not just CloudWatch
         1. For Actions, select all
         1. For resources, select `All resources`
 
@@ -74,7 +71,7 @@ a Lambda function in response to the failure that will send an email to the acco
 1. Create a Role.
     1. After creating an IAM policy, go the navigator pane, select Roles and click on `Create Role`
 
-        <img src="img/confirm_email.png" alt="drawing" height="200"/>
+        <img src="img/create_role.png" alt="drawing" height="200"/>
 
     1. Select `Lambda` as AWS Service and click Next
 
