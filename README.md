@@ -77,7 +77,7 @@ a Lambda function in response to the failure that will send an email to the acco
 
         <img src="img/select_lambda.png" alt="drawing" height="500"/>
 
-    1. Search the policy `EC2=stop` that you created and click on Next
+    1. Search the policy `EC2-stop` that you created and click on Next
 
         <img src="img/attach_policy_to_role.png" alt="drawing" height="200"/>
 
@@ -90,8 +90,8 @@ a Lambda function in response to the failure that will send an email to the acco
 
 1. Open Amazon EventBridge console. On the navigation pane click on Rules and `Create Rule`
     1. Give the rule a name and click Next
-    1. For event source, select `AWS events of EventBridge partner events.`
-    1. Scrolle down to `Creation Method`
+    1. For event source, select `AWS events or EventBridge partner events.`
+    1. Scroll down to `Creation Method`
         1. For Event Source, choose `AWS services`
         1. For AWS service, choose `EC2`
         1. For Event Type, choose `EC2 Instance State-change Notification`
@@ -99,6 +99,9 @@ a Lambda function in response to the failure that will send an email to the acco
             1. Select `Specific instance Id(s)` and paste the instance-id from the EC2 instance that you created
 
             <img src="img/creation_method.png" alt="drawing" height="500"/>
+        1. Click Next
+    1. Click `Skip to Review and Create`
+    1. Click `Create rule`
 
 ### Create a Lambda Function
 1. Open AWS Lambda Console and click `Create Function`
