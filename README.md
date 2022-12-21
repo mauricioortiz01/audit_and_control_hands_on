@@ -62,7 +62,7 @@ a Lambda function in response to the failure that will send an email to the acco
     1. For service, choose `SNS`
     1. For Actions, select all
     1. For reseources, select `All resources`
-    1. Click on `Add addtioanl Permissions`
+    1. Click on `Add additional Permissions`
         1. For service choose `CloudWatch Logs`
         1. For Actions, select all
         1. For resources, select `All resources`
