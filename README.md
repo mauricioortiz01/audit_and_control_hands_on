@@ -45,7 +45,7 @@ a Lambda function in response to the failure that will send an email to the acco
     1. Set the Endpoint to your email.
     1. Click on `Create Subscription`
 
-    <img src="img/click_create_subscription.png" alt="drawing" height="200"/>
+    <img src="img/click_create_subscription.png" alt="drawing" height="400"/>
 
 1. Check your email and you will find a confirmationi email. Confirm your subscription **Make sure to check your spam/junk**
 
@@ -78,7 +78,7 @@ a Lambda function in response to the failure that will send an email to the acco
 
     1. Select `Lambda` as AWS Service and click Next
 
-        <img src="img/select_lambda.png" alt="drawing" height="200"/>
+        <img src="img/select_lambda.png" alt="drawing" height="500"/>
 
     1. Search the policy `EC2=stop` that you created and click on Next
 
@@ -86,7 +86,7 @@ a Lambda function in response to the failure that will send an email to the acco
 
     1. Enter a name for the role `EC2-stop`
 
-        <img src="img/name_role.png" alt="drawing" height="200"/>
+        <img src="img/name_role.png" alt="drawing" height="500"/>
 
 
 ### Create a rule for receiving events in CloudWatch Logs when a specific EC2 instance fails
