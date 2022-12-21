@@ -25,8 +25,9 @@ a Lambda function in response to the failure that will send an email to the acco
 
 1. Open Amazon SNS console, on the left nagivation pane select "Topics" and then click on "Create Topic."
 
-        <img src="open_sns.png" alt="drawing" height="200"/>
+    <img src="open_sns.png" alt="drawing" height="200"/>
 
+        
 1. When creating the SNS topic:
     1. Select `Standard`
     1. Enter the name of the topic as `EC2-stop
@@ -37,7 +38,7 @@ a Lambda function in response to the failure that will send an email to the acco
 
 1. After creating the Topic, go the topic you have already created, and click on `Create Subscription`
 
-    <img src="img/click_create_subscription.png" alt="drawing" height="200"/>
+    <img src="img/create_sns.png" alt="drawing" height="200"/>
 
 1. Configure the subscription:
     1. Set the Protocol to `Email`
