@@ -34,11 +34,11 @@ a Lambda function in response to the failure that will send an email to the acco
     1. Click on Create Topic
 
 
-    <img src="img/open_sns.png" alt="drawing" height="200"/>
+    <img src="img/create_sns.png" alt="drawing" height="500"/>
 
 1. After creating the Topic, go the topic you have already created, and click on `Create Subscription`
 
-    <img src="img/create_sns.png" alt="drawing" height="200"/>
+    <img src="img/create_sns.png" alt="drawing" height="400"/>
 
 1. Configure the subscription:
     1. Set the Protocol to `Email`
