@@ -48,7 +48,7 @@ a Lambda function in response to the failure that will send an email to the acco
     <img src="img/configure_email.png" alt="drawing" height="400"/>
     
 
-1. Check your email and you will find a confirmationi email. Confirm your subscription **Make sure to check your spam/junk**
+1. Check your email and you will find a confirmation email. Confirm your subscription **Make sure to check your spam/junk**
 
     <img src="img/confirm_email.png" alt="drawing" height="200"/>
 
