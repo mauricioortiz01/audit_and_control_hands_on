@@ -108,7 +108,7 @@ a Lambda function in response to the failure that will send an email to the acco
 
     <img src="img/create_lambda_func.png" height="480"/>
 
-1. Paste the following code into the function **Make sure to delete all other code before pasting this code and make sure to replace YOUR ACCOUNT NUMBER with your details. The code will only work if you name your topic `EC2-Stop` otherwise you will have to replace that with the name of your SNS topic**
+1. Paste the following code into the function **Make sure to delete all other code before pasting this code and make sure to replace the value of topic_arn with the ARN you copied earlier. The code will only work if you name your topic `EC2-Stop` otherwise you will have to replace that with the name of your SNS topic**
 
     ```
     import boto3
@@ -116,7 +116,7 @@ a Lambda function in response to the failure that will send an email to the acco
     client = boto3.client('sns')
     def lambda_handler(event, context):
 
-        topic_arn = 'arn:aws:sns:us-east-1:YOUR_ACCOUNT_NUMBER:EC2-Stop' 
+        topic_arn = 'arn:aws:sns:us-east-1:227159494082:ec2-stop' 
         message = 'your server is down' 
         client.publish(TopicArn=topic_arn, Message=message)
     ```
@@ -136,13 +136,17 @@ a Lambda function in response to the failure that will send an email to the acco
 
             <img src="img/creation_method.png" alt="drawing" height="500"/>
         1. Click Next
-    1. Click `Skip to Review and Create`
+    1. Select a Target
+        1. Under `Select a target` choose `Lambda function`
+        1. Select the Lambda function you just created and click `Next`
+        <img src="img/select_event_bridge_targer.png" alt="drawing" height="500"/>
+    1. Click Next again
     1. Click `Create rule`
 
 ### Test
 1. Open EC2 Console
 1. Select EC2 instance that you created in the beginning of this lab, click on the instance status and stop the instance
-1. Wait until the instance has stoppped (This may take a couple of seconds)
+1. Wait until the instance has stoppped (This may take a couple of seconds even if it tells you that it already stopped it may still take 1-2 minutes)
 1. Check your email, you should get an email saying your instance was stopped
 
-<img src="img/notification_triggered.png" alt="drawing" height="300"/>
+<img src="img/notification_triggered.png" height="300"/>
