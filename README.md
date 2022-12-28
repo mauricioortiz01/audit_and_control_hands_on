@@ -106,7 +106,7 @@ a Lambda function in response to the failure that will send an email to the acco
     1. Choose the IAM role that you created.
 1. Click on Create Function
 
-    <img src="img/create_lambda_function.png" alt="drawing" height="500"/>
+    <img src="img/create_lambda_function.png" alt="drawing" height="480"/>
 
 1. Paste the following code into the function **Make sure to delete all other code before pasting this code and make sure to replace YOUR ACCOUNT NUMBER with your details. The code will only work if you name your topic `EC2-Stop` otherwise you will have to replace that with the name of your SNS topic**
 
