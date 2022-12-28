@@ -145,7 +145,10 @@ a Lambda function in response to the failure that will send an email to the acco
 
 ### Test
 1. Open EC2 Console
-1. Select EC2 instance that you created in the beginning of this lab, click on the instance status and stop the instance
+1. Select EC2 instance that you created in the beginning of this lab, click on the instance state and stop the instance
+
+<img src="img/stop_instance.png" height="300"/>
+
 1. Wait until the instance has stoppped (This may take a couple of seconds even if it tells you that it already stopped it may still take 1-2 minutes)
 1. Check your email, you should get an email saying your instance was stopped
 
