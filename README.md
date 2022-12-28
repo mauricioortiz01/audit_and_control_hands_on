@@ -1,9 +1,6 @@
 # Audit and Control Hands On
 
-In this lab you will build a scenario where an EC2 instance failure will generate a CloudWatch Log. You will then trigger 
-a Lambda function in response to the failure that will send an email to the account owner using an SNS Service.
-
-
+In this lab you will build a scenario where an EC2 instance failure will trigger a Lambda function that will send an email to the account owner using an SNS Service.
 
 ## Deliverables 
 1. An image of SNS sending you an email that your server was stopped. (Check the last image of the hands on)
