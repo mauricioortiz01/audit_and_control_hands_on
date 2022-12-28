@@ -32,16 +32,19 @@ a Lambda function in response to the failure that will send an email to the acco
 1. When creating the SNS topic:
     1. Select `Standard`
     1. Enter the name of the topic as `EC2-stop`
+    1. Open `Access Policy` 
+        1. Select `Everyone` for `Define who can publish messages to the topic`
     1. Click on Create Topic
 
 
-        <img src="img/create_sns.png" alt="drawing" height="500"/>
+        <img src="img/create_sns_topic.png" alt="drawing" height="500"/>
 
 1. After creating the Topic, go the topic you have already created, and click on `Create Subscription`
 
     <img src="img/click_create_subscription.png" alt="drawing" height="400"/>
 
 1. Configure the subscription:
+    1. Copy the `ARN` for the topic, **you will need it later**
     1. Set the Protocol to `Email`
     1. For Endpoint enter your email.
     1. Click on `Create Subscription`
@@ -65,9 +68,11 @@ a Lambda function in response to the failure that will send an email to the acco
     1. For Actions, select all
     1. For resources, select `All resources`
     1. Click on `Add additional Permissions`
-        1. For service choose `CloudWatch Logs` **It has to be CloudWatch Logs not just CloudWatch
+        1. For service choose `CloudWatch Logs` **It has to be CloudWatch Logs not just CloudWatch**
         1. For Actions, select all
         1. For resources, select `All resources`
+    
+    <img src="img/configure_policy.png" alt="drawing" height="300"/>
 
     1. Click on Next
     1. Click on Next again
@@ -78,35 +83,17 @@ a Lambda function in response to the failure that will send an email to the acco
 
         <img src="img/create_role.png" alt="drawing" height="200"/>
 
-    1. Select `Lambda` as AWS Service and click Next
+    1. At the bottom of the options, under `Use cases for other AWS Services` select `Lambda`. Then select the circle next to `Lambda` and click Next
 
-        <img src="img/select_lambda.png" alt="drawing" height="500"/>
+        <img src="img/lambda_use_case.png" alt="drawing" height="500"/>
 
     1. Search the policy `EC2-stop` that you created and click on Next
 
         <img src="img/attach_policy_to_role.png" alt="drawing" height="200"/>
 
-    1. Enter a name for the role `EC2-stop`
+    1. Enter a name for the role `EC2-stop`, scrolle down and click `Create Role`
 
         <img src="img/name_role.png" alt="drawing" height="500"/>
-
-
-### Create a rule for receiving events in CloudWatch Logs when a specific EC2 instance fails
-
-1. Open Amazon EventBridge console. On the navigation pane click on Rules and `Create Rule`
-    1. Give the rule a name and click Next
-    1. For event source, select `AWS events or EventBridge partner events.`
-    1. Scroll down to `Creation Method`
-        1. For Event Source, choose `AWS services`
-        1. For AWS service, choose `EC2`
-        1. For Event Type, choose `EC2 Instance State-change Notification`
-            1. Select `Specific state(s)` and choose `stopped`
-            1. Select `Specific instance Id(s)` and paste the instance-id from the EC2 instance that you created
-
-            <img src="img/creation_method.png" alt="drawing" height="500"/>
-        1. Click Next
-    1. Click `Skip to Review and Create`
-    1. Click `Create rule`
 
 ### Create a Lambda Function
 1. Open AWS Lambda Console and click `Create Function`
@@ -134,6 +121,23 @@ a Lambda function in response to the failure that will send an email to the acco
         client.publish(TopicArn=topic_arn, Message=message)
     ```
 1. Click on Deploy
+
+### Create a rule for receiving events in CloudWatch Logs when a specific EC2 instance fails
+
+1. Open Amazon EventBridge console. On the navigation pane click on Rules and `Create Rule`
+    1. Give the rule a name and click Next
+    1. For event source, select `AWS events or EventBridge partner events.`
+    1. Scroll down to `Creation Method`
+        1. For Event Source, choose `AWS services`
+        1. For AWS service, choose `EC2`
+        1. For Event Type, choose `EC2 Instance State-change Notification`
+            1. Select `Specific state(s)` and choose `stopped`
+            1. Select `Specific instance Id(s)` and paste the instance-id from the EC2 instance that you created
+
+            <img src="img/creation_method.png" alt="drawing" height="500"/>
+        1. Click Next
+    1. Click `Skip to Review and Create`
+    1. Click `Create rule`
 
 ### Test
 1. Open EC2 Console
