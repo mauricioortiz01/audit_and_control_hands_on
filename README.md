@@ -139,7 +139,7 @@ a Lambda function in response to the failure that will send an email to the acco
     1. Select a Target
         1. Under `Select a target` choose `Lambda function`
         1. Select the Lambda function you just created and click `Next`
-        <img src="img/select_event_bridge_targer.png" alt="drawing" height="500"/>
+        <img src="img/select_eventbridge_target.png" alt="drawing" height="500"/>
     1. Click Next again
     1. Click `Create rule`
 
