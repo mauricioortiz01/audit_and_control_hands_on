@@ -6,6 +6,7 @@ a Lambda function in response to the failure that will send an email to the acco
 
 
 ## Deliverables 
+1. An image of SNS sending you an email that your server was stopped. (Check the last image of the hands on)
 
 ## Prerequisites
 
@@ -62,7 +63,7 @@ a Lambda function in response to the failure that will send an email to the acco
 1. Configure your IAM Policy:
     1. For service, choose `SNS`
     1. For Actions, select all
-    1. For reseources, select `All resources`
+    1. For resources, select `All resources`
     1. Click on `Add additional Permissions`
         1. For service choose `CloudWatch Logs` **It has to be CloudWatch Logs not just CloudWatch
         1. For Actions, select all
@@ -133,18 +134,11 @@ a Lambda function in response to the failure that will send an email to the acco
         client.publish(TopicArn=topic_arn, Message=message)
     ```
 1. Click on Deploy
-1. Click on Add Trigger
-
-    <img src="img/click_deploy.png" alt="drawing" height="500"/>
-
-1. Choose CloudWatch Logs as trigger
-1. Select name of CloudWatch log group that you have already created
-1. Enter filter name `EC2-stop` and click on Add
-
-    <img src="img/configure_trigger.png" alt="drawing" height="500"/>
 
 ### Test
 1. Open EC2 Console
 1. Select EC2 instance that you created in the beginning of this lab, click on the instance status and stop the instance
-1. Wait until the instance has stoppped
-1. 
+1. Wait until the instance has stoppped (This may take a couple of seconds)
+1. Check your email, you should get an email saying your instance was stopped
+
+<img src="img/notification_triggered.png" alt="drawing" height="300"/>
