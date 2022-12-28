@@ -91,7 +91,7 @@ a Lambda function in response to the failure that will send an email to the acco
 
         <img src="img/attach_policy_to_role.png" alt="drawing" height="200"/>
 
-    1. Enter a name for the role `EC2-stop`, scrolle down and click `Create Role`
+    1. Enter a name for the role `EC2-stop`, scroll down and click `Create Role`
 
         <img src="img/name_role.png" alt="drawing" height="500"/>
 
